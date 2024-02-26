@@ -1,11 +1,11 @@
 import React from 'react'
-import BackgroundImage from "gatsby-background-image"
 import { useStaticQuery, graphql } from "gatsby"
 import { makeStyles, ThemeProvider } from '@material-ui/core/styles'
 import { Link } from "gatsby"
 import Typography from '@material-ui/core/Typography'
 import Button from '@material-ui/core/Button'
 import rocBuildingOne from "../images/yassine-khalfalli-roc-image.jpg"
+import ssMainSign from "../images/ss_sign_1.jpeg"
 import fiveStar from '../images/fiveStar.png'
 import Divider from '@material-ui/core/Divider'
 import PhoneIcon from '@material-ui/icons/Phone'
@@ -13,6 +13,7 @@ import StarRateIcon from '@material-ui/icons/StarRate';
 import FacebookIcon from "../images/facebook_icon4.svg"
 import InstagramIcon from "../images/instagram_icon4.svg"
 import GoogleIcon from "../images/google_icon.png"
+import MailBoxes from "../images/ss_mailboxes_1.jpeg"
 import "./main.css"
 
 const withStyles = makeStyles(() => ({
@@ -33,8 +34,11 @@ const withStyles = makeStyles(() => ({
     },
     servicesWrapper: {
         display: "flex",
-        flexDirection: "column",
-        background: "#008a9c"
+        flexWrap: "wrap",
+        "@media(max-width:600px)": {
+            flexDirection: "column",
+            alignItems: "center",
+        }
     },
     aboutWrapper: {
         display: "flex",
@@ -46,10 +50,12 @@ const withStyles = makeStyles(() => ({
             flexDirection: "column"
         }
     },
-    servicesTitleHeader: {
+    servicesTitle: {
+        fontWeight: "bold",
         textAlign: "center",
-        fontSize: "1.5rem",
-        marginBottom: "20px"
+        marginBottom: "20px",
+        fontSize: "1.25rem",
+        color: "#2A5095",
     },
     aboutTextWrapper: {
         display: "flex",
@@ -86,8 +92,8 @@ const withStyles = makeStyles(() => ({
     },
     someOfWorkHeader: {
         textAlign: "center",
-        fontSize: "2rem",
-        color: "black",
+        fontSize: "2.5rem",
+        color: "#2A5095",
         padding: "10px",
         width: "100%",
         margin: "auto",
@@ -124,7 +130,7 @@ const withStyles = makeStyles(() => ({
         marginRight: "0px",
         fontSize: "2em",
         fontWeight: "500",
-        // fontFamily: "Angkor, sans-serif !important",
+        fontFamily: "Arial !important",
         textAlign: "center",
         margin: "auto",
         "@media(max-width: 600px)": {
@@ -141,7 +147,7 @@ const withStyles = makeStyles(() => ({
             marginRight: "0px",
             fontSize: "2em",
             fontWeight: "100",
-            // fontFamily: "Raleway, sans-serif",
+            fontFamily: "Arial !important",
             textAlign: "center",
             margin: "auto"
         }
@@ -230,13 +236,12 @@ const withStyles = makeStyles(() => ({
     contactPhone: {
         color: "black",
         textDecoration: "none",
-        // fontFamily: "Raleway, sans-serif",
+        fontFamily: "Arial !important",
     },
     contactButton: {
         margin: "20px",
-        backgroundColor: "#333333",
+        backgroundColor: "#2A5095",
         color: "white",
-        borderColor: "#333333",
         borderRadius: "35px",
         padding: "15px",
         paddingLeft: "25px",
@@ -332,7 +337,7 @@ const withStyles = makeStyles(() => ({
         backgroundColor: "#1f5a76",
         margin: "auto",
         marginRight: "10px",
-        fontFamily: "proxima-nova, Helvetica, Arial, sans-serif",
+        fontFamily: "Arial !important",
         borderRadius: "14px"
     },
     bbbCirleText: {
@@ -384,8 +389,7 @@ const withStyles = makeStyles(() => ({
     aboutTitleHeader: {
         textAlign: "center",
         fontSize: "2rem",
-        color: "black",
-        textTransform: "uppercase",
+        color: "#2A5095",
         marginBottom: 0
     },
     addressText: {
@@ -475,7 +479,6 @@ const withStyles = makeStyles(() => ({
         objectFit: "cover",
         aspectRatio: "1/1",
         height: "100vh",
-        marginTop: "112px",
         marginBottom: "0px"
     },
     mainBanner: {
@@ -494,6 +497,30 @@ const withStyles = makeStyles(() => ({
             marginLeft: "15%",
             marginRight: "15%",
         }
+    },
+    servicesItem: {
+        display: "flex",
+        flexDirection: "column",
+        alignItems: "center",
+        justifyContent: "space-between",
+        flex: "1 0 20%",
+        margin: "5px",
+        padding: "25px",
+        "@media(max-width:600px)": {
+            width: "100%"
+        }
+    },
+    servicesSubtitle: {
+        marginBottom: "10px",
+        fontSize: "0.9rem",
+        textAlign: "center"
+    },
+    servicesImage: {
+        width: "100%",
+        maxWidth: "450px",
+        aspectRatio: "1/1",
+        objectFit: "cover",
+        borderRadius: "5px"
     },
 
 }))
@@ -541,40 +568,68 @@ const Main = () => {
         <div className={classes.mainRoot}>
             {/* <div className={classes.mainBanner}>We are closed Tuesday, August 1st. We will reopen Wednesday, August 2nd</div> */}
 
-            <img src={rocBuildingOne} className={classes.landingImage} />
+            <img src={ssMainSign} className={classes.landingImage} />
 
-            <section class="sectionWrapper">
-                <div className={classes.container}>
-                    <div className={classes.container}>
-                        <span className={classes.scrollToSectionOne} id="sectionOne"></span>
+            <div className={classes.container}>
+                <span className={classes.scrollToSectionOne} id="sectionOne"></span>
+            </div>
+
+            <section class="servicesSectionWrapper">
+                <Typography className={classes.someOfWorkHeader}>Our Services</Typography>
+                <div className={classes.servicesWrapper}>
+                    <div className={classes.servicesItem}>
+                        <Typography className={classes.servicesTitle}>Packing & Shipping</Typography>
+                        <Typography className={classes.servicesSubtitle}>Fedex, UPS, DHL, USPS, Boxes, Office Supplies</Typography>
+                        <img className={classes.servicesImage} src={MailBoxes} />
                     </div>
-                    <div className={classes.containerMarginBottomSmall}>
-                        <Typography className={classes.someOfWorkHeader}>Section 1 Header Line 1... <br /> Section 1 Line 2.</Typography>
+                    <div className={classes.servicesItem}>
+                        <Typography className={classes.servicesTitle}>Passport Photos</Typography>
+                        <Typography className={classes.servicesSubtitle}></Typography>
+                        <img className={classes.servicesImage} src={MailBoxes} />
                     </div>
+                    <div className={classes.servicesItem}>
+                        <Typography className={classes.servicesTitle}>Mail Receiving</Typography>
+                        <Typography className={classes.servicesSubtitle}>Mailboxes and Faxing</Typography>
+                        <img className={classes.servicesImage} src={MailBoxes} />
+                    </div>
+                    <div className={classes.servicesItem}>
+                        <Typography className={classes.servicesTitle}>Mailing Services</Typography>
+                        <Typography className={classes.servicesSubtitle}>Full Service, Postal Presorting, Postage Discounts</Typography>
+                        <img className={classes.servicesImage} src={MailBoxes} />
+                    </div>
+
                 </div>
 
             </section>
-            <div className={classes.container}>
-                <span className={classes.scrollToSectionOne} id="sectionTwo"></span>
-            </div>
-            <section class="sectionWrapper">
-                <Typography className={classes.someOfWorkHeader}>Section 2 Header Line 1... <br /> Section 2 Line 2.</Typography>
 
-                <Link to="/chill-menu" class="menuContent menuLink chillBlock">
-                    Page 2
-                </Link>
-                <Link to="/grill-menu" class="menuContent menuLink grillBlock">
-                    Page 3
-                </Link>
-            </section>
             <span className={classes.scrollToLocation} id="sectionThree"></span>
 
             <section class="py-5 section-bubble3">
                 <div className={classes.container}>
                     <div className={classes.aboutWrapper}>
                         <div className={classes.aboutSectionWrapper}>
-                            <Typography className={classes.aboutTitleHeader}>Section 3</Typography>
-                            <Typography className={classes.addressText}>Section 3 subtext</Typography>
+                            <Typography className={classes.aboutTitleHeader}>Contact Us</Typography>
+                            <div className={classes.phoneEmailWrapper}>
+                                <a href="tel:585-872-2170" className={classes.contactPhone}>
+                                    <Button className={classes.contactButton}>
+                                        <PhoneIcon className={classes.phoneIcon} />
+                                        (585) 872-2170
+                                    </Button>
+                                </a>
+                                <a className="bottomHeaderEmail" href='mailto: supsol@aol.com'>Email Us</a>
+
+                            </div>
+                            <div class="hoursWrapper">
+                                <p>Hours</p>
+                                <div class="hoursDayTime">
+                                    <p>Monday - Friday</p>
+                                    <p class="hoursTime">9:00 AM - 5:30 PM</p>
+                                </div>
+                                <div class="hoursDayTime">
+                                    <p>Saturday</p>
+                                    <p class="hoursTime">10:00 AM - 2:00 PM</p>
+                                </div>
+                            </div>
                         </div>
                     </div>
                 </div>
@@ -584,24 +639,7 @@ const Main = () => {
             <section class="py-5 section-bubble4">
                 <div className={classes.container}>
                     <div>
-                        <Typography className={classes.connectHeader}>Connect With Us</Typography>
-                        <div className={classes.phoneEmailWrapper}>
-                            <a href="tel:" className={classes.contactPhone}>
-                                <Button className={classes.contactButton}>
-                                    <PhoneIcon className={classes.phoneIcon} />
-                                    (123) 456-7890
-                                </Button>
-                            </a>
-                            <div className={classes.socialLinkWrapper}>
-                                <a href="" target="_blank" className={classes.socialLink}>
-                                    <img className={classes.socialFooter} src={InstagramIcon} />
-                                </a>
-                                <a href="" target="_blank" className={classes.socialLink}>
-                                    <img className={classes.socialFacebookSpacing} src={FacebookIcon} />
-                                </a>
-                            </div>
 
-                        </div>
                         <div className={classes.reviewsWrapper}>
                             <a className={classes.reviewLink}
                                 href=""

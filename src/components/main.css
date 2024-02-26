@@ -79,6 +79,7 @@ body {
 .drawerPhoneIcon {
     margin-right: 5px;
     width: 25px;
+    color: #2A5095;
 }
 
 .marginBottomSmall {
@@ -104,6 +105,86 @@ body {
     margin: auto 20px;
 }
 
+.navRightWrapper {
+    display: flex;
+}
+
+.bottomHeaderRoot {
+    background-color: #2A5095;
+    position: relative;
+    top: 180px;
+    width: 80%;
+    margin: auto;
+}
+
+.bottomHeaderWrapper {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: auto;
+    height: 100%;
+}
+
+.bottomHeaderPhone {
+    font-weight: bold;
+    margin: auto 10px;
+    font-size: 1rem;
+}
+
+.bottomHeaderEmail {
+    text-decoration: none;
+    color: white;
+    margin: auto 10px;
+    background-color: #2A5095;
+    padding: 15px;
+    padding-left: 25px;
+    padding-right: 25px;
+    border-radius: 35px;
+}
+
+.hoursWrapper {
+    display: flex;
+    margin: 30px auto;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: 400px;
+
+}
+
+.hoursWrapper p {
+    text-align: left;
+    font-weight: bold;
+}
+
+.hoursTime {
+    color: #2A5095;
+    font-weight: normal !important;
+}
+
+.hoursDayTime {
+    display: flex;
+    justify-content: space-between;
+    width: 100%;
+}
+
+.saturdayAppt {
+    text-align: left;
+}
+
+.bottomHeaderPhone>span {
+    font-weight: bold;
+    font-size: 1rem;
+    color: white;
+}
+
+.bottomHeaderText {
+    color: white;
+    font-weight: bold;
+    font-size: 1rem;
+    margin: auto 10px;
+}
+
 .navCallButtonMobile {
     display: flex;
     background-color: #f03d3dcf;
@@ -115,9 +196,19 @@ body {
     margin: auto 20px;
 }
 
+.servicesSectionWrapper {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding: 5%;
+}
+
 .navCallButton>span {
     margin: auto;
 }
+
+
 
 .aboutTitleHeader {
     text-align: center;
@@ -141,8 +232,6 @@ body {
 .sectionWrapper {
     display: flex;
     justify-content: center;
-    border: 5px solid black;
-    height: 500px;
 }
 
 .aboutSectionWrapper {
@@ -169,7 +258,7 @@ body {
 
 .footerRoot {
     display: flex;
-    background-color: #333333;
+    background: #2A5095;
     color: white;
     height: 110px;
 }
@@ -266,6 +355,33 @@ body {
 }
 
 @media(max-width:600px) {
+
+    .hoursDayTime {
+        margin: auto;
+        align-items: center;
+        width: 90%;
+    }
+
+    .hoursWrapper {
+        width: 100%;
+    }
+
+
+    .bottomHeaderWrapper {
+        flex-direction: column;
+    }
+    
+    .bottomHeaderPhone>span {
+        padding: 6px 8px;
+        font-size: 0.9rem;
+    }
+    
+    .bottomHeaderText {
+        padding: 6px 8px;
+        margin: 5px;
+        font-size: 0.9rem;
+    }
+
     .menuLink {
         font-size: 1.25rem;
     }
