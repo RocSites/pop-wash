@@ -68,8 +68,16 @@ body {
 }
 
 .menuHeader {
-    margin-top: 150px;
+    margin-top: 200px;
     text-align: center;
+}
+
+.mapWrapper {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    margin: auto;
 }
 
 .menuImage {
@@ -88,10 +96,11 @@ body {
 
 .drawerItemLogin {
     display: flex;
-    background-color: #f03d3dcf;
-    padding: 8px 16px;
-    color: black;
+    background-color: #2A5095;
+    padding: 10px 16px;
+    color: white;
     text-decoration: none;
+    width: 100%;
 }
 
 .navCallButton {
@@ -204,6 +213,61 @@ body {
     padding: 5%;
 }
 
+.servicesLink {
+    text-decoration: none;
+}
+
+.packingShippingImageLogo {
+    width: 150px;
+    margin: 15px;
+}
+
+.pageDetailsTextWrapper {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin: 50px auto;
+    width: 50%;
+}
+
+.pageDetailText {
+    color: #2A5095;
+}
+
+.packingShippingWrapper {
+    display: flex;
+    justify-content: center;
+}
+
+
+.imageWrapper {
+    width: 50%;
+    border-radius: 35px;
+}
+
+.giftDetailWrapper {
+    display: flex;
+    margin-top: 25px;
+    width: 80%;
+    justify-content: space-between;
+}
+
+.giftImage {
+    max-height: 500px;
+}
+
+.giftDetailTextMobile {
+    display: none;
+}
+
+.giftDetailText {
+    width: 40%;
+}
+
+.giftDetailTextNoMobile {
+    width: 40%;
+}
+
 .navCallButton>span {
     margin: auto;
 }
@@ -303,7 +367,7 @@ body {
 
 .socialLinkWrapperNavMobile {
     display: flex;
-    margin: 15px;
+    margin-top: 15px;
 }
 
 .socialDrawer {
@@ -344,6 +408,18 @@ body {
     margin: 40px 0;
 }
 
+.passportPhoto {
+    max-height: 300px;
+    margin: auto;
+    display: flex;
+}
+
+.mailReceivingPhoto {
+    max-height: 500px;
+    margin: auto;
+    display: flex;
+}
+
 @keyframes twinkle {
     from {
         transform: translateX(1vw);
@@ -355,6 +431,37 @@ body {
 }
 
 @media(max-width:600px) {
+
+    .imageWrapper {
+        width: 100%;
+    }
+
+    .packingShippingWrapper {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .pageDetailsTextWrapper {
+        width: 80%;
+        margin: 20px auto;
+    }
+
+    .pageDetailText {
+        text-align: center;
+    }
+
+    .giftDetailTextNoMobile {
+        display: none;
+    }
+
+    .giftDetailWrapper {
+        flex-direction: column;
+        align-items: center;
+    }
+    
+    .giftDetailTextMobile {
+        display: flex;
+    }
 
     .hoursDayTime {
         margin: auto;

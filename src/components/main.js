@@ -14,6 +14,11 @@ import FacebookIcon from "../images/facebook_icon4.svg"
 import InstagramIcon from "../images/instagram_icon4.svg"
 import GoogleIcon from "../images/google_icon.png"
 import MailBoxes from "../images/ss_mailboxes_1.jpeg"
+import PassPort from "../images/jon-tyson-passport.jpg"
+import MailServices from "../images/sue-hughes-mail.jpg"
+import Boxes from "../images/ss_boxes_2.jpeg"
+import GiftBeanieOne from "../images/ss_beanie.jpeg"
+import GiftBeanieTwo from "../images/ss_beanie_3.jpeg"
 import "./main.css"
 
 const withStyles = makeStyles(() => ({
@@ -503,6 +508,7 @@ const withStyles = makeStyles(() => ({
         flexDirection: "column",
         alignItems: "center",
         justifyContent: "space-between",
+        textDecoration: "none",
         flex: "1 0 20%",
         margin: "5px",
         padding: "25px",
@@ -513,7 +519,8 @@ const withStyles = makeStyles(() => ({
     servicesSubtitle: {
         marginBottom: "10px",
         fontSize: "0.9rem",
-        textAlign: "center"
+        textAlign: "center",
+        color: "black"
     },
     servicesImage: {
         width: "100%",
@@ -577,30 +584,59 @@ const Main = () => {
             <section class="servicesSectionWrapper">
                 <Typography className={classes.someOfWorkHeader}>Our Services</Typography>
                 <div className={classes.servicesWrapper}>
-                    <div className={classes.servicesItem}>
+
+                    <Link to="/packing-shipping" className={classes.servicesItem}>
                         <Typography className={classes.servicesTitle}>Packing & Shipping</Typography>
                         <Typography className={classes.servicesSubtitle}>Fedex, UPS, DHL, USPS, Boxes, Office Supplies</Typography>
-                        <img className={classes.servicesImage} src={MailBoxes} />
-                    </div>
-                    <div className={classes.servicesItem}>
+
+                        <img className={classes.servicesImage} src={Boxes} />
+                    </Link>
+
+                    <Link to="/passports" className={classes.servicesItem}>
                         <Typography className={classes.servicesTitle}>Passport Photos</Typography>
-                        <Typography className={classes.servicesSubtitle}></Typography>
-                        <img className={classes.servicesImage} src={MailBoxes} />
-                    </div>
-                    <div className={classes.servicesItem}>
+                        <Typography className={classes.servicesSubtitle}>Instant Passport Photos</Typography>
+                        <img className={classes.servicesImage} src={PassPort} />
+                    </Link>
+                    <Link to="/mail-receiving" className={classes.servicesItem}>
                         <Typography className={classes.servicesTitle}>Mail Receiving</Typography>
                         <Typography className={classes.servicesSubtitle}>Mailboxes and Faxing</Typography>
                         <img className={classes.servicesImage} src={MailBoxes} />
-                    </div>
-                    <div className={classes.servicesItem}>
+                    </Link>
+                    <Link to="/mail-services" className={classes.servicesItem}>
                         <Typography className={classes.servicesTitle}>Mailing Services</Typography>
                         <Typography className={classes.servicesSubtitle}>Full Service, Postal Presorting, Postage Discounts</Typography>
-                        <img className={classes.servicesImage} src={MailBoxes} />
-                    </div>
+                        <img className={classes.servicesImage} src={MailServices} />
+                    </Link>
 
                 </div>
 
             </section>
+
+            <span className={classes.scrollToLocation} id="sectionTwo"></span>
+
+            <section class="servicesSectionWrapper">
+                <Typography className={classes.aboutTitleHeader}>Gifts</Typography>
+                <div class="giftDetailWrapper">
+                    <div class="imageWrapper">
+                        <img class="giftImage" src={GiftBeanieOne} />
+                    </div>
+                    <div class="giftDetailText">
+                        <p>some text</p>
+                    </div>
+                </div>
+                <div class="giftDetailWrapper">
+                    <div class="giftDetailTextNoMobile">
+                        <p>some text</p>
+                    </div>
+                    <div class="imageWrapper">
+                        <img class="giftImage" src={GiftBeanieTwo} />
+                    </div>
+                    <div class="giftDetailTextMobile">
+                        <p>some text</p>
+                    </div>
+                </div>
+            </section>
+
 
             <span className={classes.scrollToLocation} id="sectionThree"></span>
 
@@ -618,6 +654,12 @@ const Main = () => {
                                 </a>
                                 <a className="bottomHeaderEmail" href='mailto: supsol@aol.com'>Email Us</a>
 
+                            </div>
+                            <div>
+                                <p style={{textAlign: "center", marginTop: "20px"}}>1170 Ridge Road Webster,NY 14580</p>
+                                <div class="mapWrapper">
+                                    <iframe src="https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d11631.718688287952!2d-77.4425525!3d43.2109644!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x89d6cee19cf0c91b%3A0x9281849d23c57d2c!2sSuperior%20Solutions!5e0!3m2!1sen!2sus!4v1709057938288!5m2!1sen!2sus" width="600" height="450" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+                                </div>
                             </div>
                             <div class="hoursWrapper">
                                 <p>Hours</p>

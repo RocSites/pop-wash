@@ -104,7 +104,7 @@ const withStyles = makeStyles(() => ({
   hamburgerIcon: {
     margin: "20px",
     fontSize: "2.5rem",
-    color: "white",
+    color: "#2A5095",
     "@media(min-width: 601px)": {
       display: "none"
     }
@@ -125,16 +125,17 @@ const withStyles = makeStyles(() => ({
   },
   navCallButtonMobile: {
     display: "flex",
-    backgroundColor: "white",
     padding: "8px 16px",
-    color: "black",
+    color: "#2A5095",
+    border: "1px solid #2A5095",
     textTransform: "none",
     borderRadius: "35px",
     height: "50px",
     margin: "auto 20px",
     "@media(max-width: 600px)": {
       fontSize: "0.75rem",
-      margin: "auto"
+      margin: "auto",
+      width: "110px"
     }
   },
   drawerLinkWrapper: {
@@ -142,7 +143,7 @@ const withStyles = makeStyles(() => ({
     flexDirection: "column",
   },
   navButtonMobile: {
-    color: "white",
+    color: "#2A5095",
     // fontWeight: "bold",
     textTransform: "none",
     margin: "10px 16px",
@@ -211,7 +212,7 @@ const Header = ({ siteTitle }) => {
               className={classes.navCallButton}
               target="_blank" href="tel:585-872-2170"
             >
-              <PhoneIcon sx={{color: "#2A5095"}} class="drawerPhoneIcon" />
+              <PhoneIcon sx={{fill: "#2A5095 !important"}} class="drawerPhoneIcon" />
               Call Us
             </Button>
           </div>
@@ -223,7 +224,7 @@ const Header = ({ siteTitle }) => {
             className={classes.navCallButtonMobile}
             target="_blank" href="tel:585-872-2170"
           >
-            <PhoneIcon sx={{color: "#2A5095"}} class="drawerPhoneIcon" />
+            <PhoneIcon sx={{fill: "#2A5095 !important"}} class="drawerPhoneIcon" />
             Call Us
           </Button>
           <MenuIcon
@@ -245,13 +246,13 @@ const Header = ({ siteTitle }) => {
               <List>
                 <div className={classes.drawerLinkWrapper}>
                   <AnchorLink className={classes.navButtonMobile}
-                    to="/#sectionOne" title="Section 1">
+                    to="/#sectionOne" title="Services">
                   </AnchorLink>
                   <AnchorLink className={classes.navButtonMobile}
-                    to="/#sectionTwo" title="Section 2">
+                    to="/#sectionTwo" title="Gifts">
                   </AnchorLink>
                   <AnchorLink className={classes.navButtonMobile}
-                    to="/#sectionThree" title="Section 3">
+                    to="/#sectionThree" title="Contact Us">
                   </AnchorLink>
                 </div>
 
@@ -261,7 +262,7 @@ const Header = ({ siteTitle }) => {
                     class="drawerItemLogin"
                     target="_blank" href="tel:585-872-2170"
                   >
-                    <PhoneIcon class="drawerPhoneIcon" />
+                    <PhoneIcon sx={{fill: "white !important"}} class="drawerPhoneIcon" />
                     Call Us
                   </Button>
                 </div>
@@ -280,7 +281,7 @@ const Header = ({ siteTitle }) => {
           > (585) 872-2170
           </Button>
           <AnchorLink className={classes.mapLink}
-            to="/#map">
+            to="/#sectionThree">
             <p className="bottomHeaderText">1170 Ridge Road Webster,NY 14580</p>
 
           </AnchorLink>
