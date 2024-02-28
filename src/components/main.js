@@ -16,9 +16,12 @@ import GoogleIcon from "../images/google_icon.png"
 import MailBoxes from "../images/ss_mailboxes_1.jpeg"
 import PassPort from "../images/jon-tyson-passport.jpg"
 import MailServices from "../images/sue-hughes-mail.jpg"
+import SuppliesImage from "../images/ss_supplies_2.jpeg"
 import Boxes from "../images/ss_boxes_2.jpeg"
 import GiftBeanieOne from "../images/ss_beanie.jpeg"
 import GiftBeanieTwo from "../images/ss_beanie_3.jpeg"
+import PuzzlesPhoto from "../images/ss_puzzles.jpeg"
+import GiftBeanieThree from "../images/ss_beanie_2.jpeg"
 import "./main.css"
 
 const withStyles = makeStyles(() => ({
@@ -524,7 +527,7 @@ const withStyles = makeStyles(() => ({
     },
     servicesImage: {
         width: "100%",
-        maxWidth: "450px",
+        maxWidth: "250px",
         aspectRatio: "1/1",
         objectFit: "cover",
         borderRadius: "5px"
@@ -587,7 +590,7 @@ const Main = () => {
 
                     <Link to="/packing-shipping" className={classes.servicesItem}>
                         <Typography className={classes.servicesTitle}>Packing & Shipping</Typography>
-                        <Typography className={classes.servicesSubtitle}>Fedex, UPS, DHL, USPS, Boxes, Office Supplies</Typography>
+                        <Typography className={classes.servicesSubtitle}>Fedex, UPS, DHL, USPS</Typography>
 
                         <img className={classes.servicesImage} src={Boxes} />
                     </Link>
@@ -607,6 +610,11 @@ const Main = () => {
                         <Typography className={classes.servicesSubtitle}>Full Service, Postal Presorting, Postage Discounts</Typography>
                         <img className={classes.servicesImage} src={MailServices} />
                     </Link>
+                    <Link to="/supplies" className={classes.servicesItem}>
+                        <Typography className={classes.servicesTitle}>Packing & Office Supplies</Typography>
+                        <Typography className={classes.servicesSubtitle}>Boxes, Bubble Wrap, Packing Peanuts, Office Supplies</Typography>
+                        <img className={classes.servicesImage} src={SuppliesImage} />
+                    </Link>
 
                 </div>
 
@@ -616,24 +624,35 @@ const Main = () => {
 
             <section class="servicesSectionWrapper">
                 <Typography className={classes.aboutTitleHeader}>Gifts</Typography>
+                <p class="giftDetailText">Explore our store's delightful Beanie Babies, stuffed animals, and puzzles! Find cuddly companions,
+                    soft plush toys, and brain-teasing puzzles for all ages. Let your imagination soar with us today!</p>
                 <div class="giftDetailWrapper">
-                    <div class="imageWrapper">
+                    <div class="giftImageWrapper">
                         <img class="giftImage" src={GiftBeanieOne} />
                     </div>
-                    <div class="giftDetailText">
-                        <p>some text</p>
-                    </div>
-                </div>
-                <div class="giftDetailWrapper">
-                    <div class="giftDetailTextNoMobile">
-                        <p>some text</p>
-                    </div>
-                    <div class="imageWrapper">
+                    <div class="giftImageWrapper">
                         <img class="giftImage" src={GiftBeanieTwo} />
                     </div>
-                    <div class="giftDetailTextMobile">
-                        <p>some text</p>
+                    <div class="giftImageWrapper">
+                        <img class="giftImage" src={PuzzlesPhoto} />
                     </div>
+                    <div class="giftImageWrapper">
+                        <img class="giftImage" src={GiftBeanieThree} />
+                    </div>
+                </div>
+            </section>
+
+            <span className={classes.scrollToLocation} id="about"></span>
+
+
+            <section class="servicesSectionWrapper">
+                <Typography className={classes.aboutTitleHeader}>About Us</Typography>
+                <p class="giftDetailText">Superior Solutions is an independent family owned and operated pack and ship establishment in Webster, New York. </p>
+                <p class="giftDetailText">With over 24 years of experience in the packaging and shipping industry, the owner, Cynthia Wachter opened Superior Solutions to provide customers with superior packing and shipping services in a personal and professional manner.</p>
+                <p class="giftDetailText">Although a Federal Express Authorized Ship Agent, unlike the name brand stores, Superior Solutions utilizes all major shippers including FedEx, UPS, DHL, and USPS to provide customers with multiple options and the best possible pricing to meet their needs.</p>
+                <div class="bbbWrapper">
+                <a target="_blank" title="Superior Solutions BBB Business Review" href="http://www.bbb.org/upstate-new-york/business-reviews/mailing-services/superior-solutions-in-webster-ny-172807213/#bbbonlineclick">
+                    <img style={{margin: "auto"}} src="http://seal-upstateny.bbb.org/seals/blue-seal-200-130-superior-solutions-172807213.png" alt="Superior Solutions BBB Business Review"/></a>
                 </div>
             </section>
 
@@ -656,7 +675,7 @@ const Main = () => {
 
                             </div>
                             <div>
-                                <p style={{textAlign: "center", marginTop: "20px"}}>1170 Ridge Road Webster,NY 14580</p>
+                                <p style={{ textAlign: "center", marginTop: "20px" }}>1170 Ridge Road Webster,NY 14580</p>
                                 <div class="mapWrapper">
                                     <iframe src="https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d11631.718688287952!2d-77.4425525!3d43.2109644!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x89d6cee19cf0c91b%3A0x9281849d23c57d2c!2sSuperior%20Solutions!5e0!3m2!1sen!2sus!4v1709057938288!5m2!1sen!2sus" width="600" height="450" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
                                 </div>

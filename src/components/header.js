@@ -17,6 +17,12 @@ import PhoneIcon from '@mui/icons-material/Phone';
 import FacebookIcon from "../images/facebook_icon4.svg"
 import InstagramIcon from "../images/instagram_icon4.svg"
 import { AnchorLink } from "gatsby-plugin-anchor-links";
+import KeyboardArrowDownIcon from '@mui/icons-material/KeyboardArrowDown';
+import ListItemButton from '@mui/material/ListItemButton';
+import ExpandLess from '@mui/icons-material/ExpandLess';
+import ExpandMore from '@mui/icons-material/ExpandMore';
+import Collapse from '@mui/material/Collapse';
+import Typography from '@mui/material/Typography';
 
 import "./main.css"
 
@@ -28,7 +34,7 @@ const withStyles = makeStyles(() => ({
     }
   },
   navBarRoot: {
-    position: "absolute",
+    position: "fixed",
     display: "flex",
     color: "#2A5095",
     backgroundColor: "white",
@@ -174,7 +180,45 @@ const withStyles = makeStyles(() => ({
 const Header = ({ siteTitle }) => {
 
   const classes = withStyles();
-  const [openDrawer, setOpenDrawer] = useState(false)
+  const [openDrawer, setOpenDrawer] = useState(false);
+  const [dropdown, setDropdown] = useState(false);
+  const [open, setOpen] = useState(false)
+
+  const handleClickMobile = () => {
+    setOpen(!open)
+  }
+
+  const serviceMenuItems = [
+    {
+      title: 'Services',
+      url: '',
+      submenu: [
+        {
+          title: 'Packing & Shipping',
+          url: '/packing-shipping',
+        },
+        {
+          title: 'Passport Photos',
+          url: '/passports',
+        },
+        {
+          title: 'Mail Receiving',
+          url: '/mail-receiving',
+        },
+        {
+          title: 'Mailing Services',
+          url: '/mail-services',
+        },
+        {
+          title: 'Packing & Office Supplies',
+          url: '/supplies',
+        }
+      ]
+    },
+
+
+  ];
+
 
   const toggleDrawer = () => {
     setOpenDrawer(drawerOpen => !drawerOpen)
@@ -193,13 +237,34 @@ const Header = ({ siteTitle }) => {
           </div>
         </div>
 
-        <div class="navRightWrapper">
+        <div class="navRightWrapper" onMouseLeave={() => setDropdown(false)}>
           <div className={classes.navBarButtonWrapper}>
-            <AnchorLink className={classes.navButton}
-              to="/#sectionOne" title="Services">
-            </AnchorLink>
+            <div className="productButtonWrapper">
+              <button
+                aria-expanded={dropdown ? "true" : "false"}
+                onMouseEnter={() => setDropdown(true)}
+                style={{
+                  border: "transparent"
+                }}
+              >
+                Services
+                <KeyboardArrowDownIcon />
+              </button>
+              {dropdown ?
+                <ul className={`dropdown dropdown-submenu ${dropdown ? "show" : ""}`}>
+                  {serviceMenuItems[0].submenu.map((submenu, index) => (
+                    <li key={index} className="menu-items">
+                      <a href={submenu.url}>{submenu.title}</a>
+                    </li>
+                  ))}
+                </ul>
+                : null}
+            </div>
             <AnchorLink className={classes.navButton}
               to="/#sectionTwo" title="Gifts">
+            </AnchorLink>
+            <AnchorLink className={classes.navButton}
+              to="/#about" title="About">
             </AnchorLink>
             <AnchorLink className={classes.navButton}
               to="/#sectionThree" title="Contact Us">
@@ -212,7 +277,7 @@ const Header = ({ siteTitle }) => {
               className={classes.navCallButton}
               target="_blank" href="tel:585-872-2170"
             >
-              <PhoneIcon sx={{fill: "#2A5095 !important"}} class="drawerPhoneIcon" />
+              <PhoneIcon sx={{ fill: "#2A5095 !important" }} class="drawerPhoneIcon" />
               Call Us
             </Button>
           </div>
@@ -224,7 +289,7 @@ const Header = ({ siteTitle }) => {
             className={classes.navCallButtonMobile}
             target="_blank" href="tel:585-872-2170"
           >
-            <PhoneIcon sx={{fill: "#2A5095 !important"}} class="drawerPhoneIcon" />
+            <PhoneIcon sx={{ fill: "#2A5095 !important" }} class="drawerPhoneIcon" />
             Call Us
           </Button>
           <MenuIcon
@@ -240,33 +305,61 @@ const Header = ({ siteTitle }) => {
             <div
               className={classes.list}
               role="presentation"
-              onClick={toggleDrawer}
-              onKeyDown={toggleDrawer}
             >
-              <List>
-                <div className={classes.drawerLinkWrapper}>
-                  <AnchorLink className={classes.navButtonMobile}
-                    to="/#sectionOne" title="Services">
-                  </AnchorLink>
+              <div className={classes.drawerLinkWrapper}>
+                <div className="productButtonWrapperMobile">
+                  <ListItemButton style={{ paddingLeft: "8px", paddingBottom: "0px", justifyContent: "flex-start" }} onClick={handleClickMobile}>
+                    <Typography style={{ fontFamily: "georgia, sans-serif", color: "#2A5095" }}>Services</Typography>
+                    {open ? <ExpandLess sx={{fill: "#2A5095"}} /> : <ExpandMore sx={{fill: "#2A5095"}} />}
+                  </ListItemButton>
+                  <Collapse in={open} timeout="auto" unmountOnExit>
+                    <List component="div" disablePadding>
+                      <List>
+                        {serviceMenuItems[0].submenu.map((submenu, index) => (
+                          <ListItemText key={index} className="menu-items">
+                            <a style={{ fontSize: "0.9rem",fontFamily: "georgia, sans-serif", paddingLeft: "32px", color: "#2A5095" }} href={submenu.url}>{submenu.title}</a>
+                          </ListItemText>
+                        ))}
+                      </List>
+                    </List>
+                  </Collapse>
+                  {dropdown ?
+                    <ul className={`dropdown-mobile dropdown-submenu ${dropdown ? "show" : ""}`}>
+                      {serviceMenuItems[0].submenu.map((submenu, index) => (
+                        <li key={index} className="menu-items">
+                          <a href={submenu.url}>{submenu.title}</a>
+                        </li>
+                      ))}
+                    </ul>
+                    : null}
+                </div>
+                <List
+                  onClick={toggleDrawer}
+                  onKeyDown={toggleDrawer}
+                  style={{ display: "flex", flexDirection: "column" }}
+                >
                   <AnchorLink className={classes.navButtonMobile}
                     to="/#sectionTwo" title="Gifts">
                   </AnchorLink>
                   <AnchorLink className={classes.navButtonMobile}
+                    to="/#about" title="About">
+                  </AnchorLink>
+                  <AnchorLink className={classes.navButtonMobile}
                     to="/#sectionThree" title="Contact Us">
                   </AnchorLink>
-                </div>
+                </List>
+              </div>
 
 
-                <div class="socialLinkWrapperNavMobile">
-                  <Button
-                    class="drawerItemLogin"
-                    target="_blank" href="tel:585-872-2170"
-                  >
-                    <PhoneIcon sx={{fill: "white !important"}} class="drawerPhoneIcon" />
-                    Call Us
-                  </Button>
-                </div>
-              </List>
+              <div class="socialLinkWrapperNavMobile">
+                <Button
+                  class="drawerItemLogin"
+                  target="_blank" href="tel:585-872-2170"
+                >
+                  <PhoneIcon sx={{ fill: "white !important" }} class="drawerPhoneIcon" />
+                  Call Us
+                </Button>
+              </div>
 
             </div>
           </Drawer>
