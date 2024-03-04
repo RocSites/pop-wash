@@ -1,7 +1,7 @@
 module.exports = {
   siteMetadata: {
-    title: `Rocsites Gastby template 3`,
-    description: `Generic Gatsby template for businesses`,
+    title: `Superior Solutions`,
+    description: `independent family owned and operated pack and ship establishment in Webster, New York.`,
     author: `Doug Kellermeyer`,
   },
   plugins: [
