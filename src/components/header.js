@@ -44,6 +44,8 @@ const withStyles = makeStyles(() => ({
     margin: "0px auto",
     boxShadow: "none",
     zIndex: "1",
+    height: "100px",
+    backgroundImage: "linear-gradient(rgba(162, 176, 255, .95), rgba(162, 176, 255, 0))",
     "@media(max-width: 1200px)": {
       position: "fixed",
       display: "flex",
@@ -68,12 +70,12 @@ const withStyles = makeStyles(() => ({
     justifyContent: "space-between",
     width: "100%",
     top: 0,
-    boxShadow: "1px 0 10px 0 rgb(89 98 115 / 20%)",
+    backgroundImage: "linear-gradient(rgba(162, 176, 255, .95), rgba(162, 176, 255, 0))",
     zIndex: 2,
   },
   navBarTitle: {
     maxWidth: 960,
-    padding: `1.45rem 1.0875rem`,
+    padding: `0.5rem`,
   },
   navButton: {
     color: "#2A5095",
@@ -99,7 +101,7 @@ const withStyles = makeStyles(() => ({
   },
   navLogo: {
     display: "flex",
-    width: "130px",
+    width: "100px",
     margin: "auto",
     borderRadius: "16px"
   },
@@ -251,7 +253,7 @@ const Header = ({ siteTitle }) => {
   })
 
   return (
-    <div style={{ marginBottom: "-50px" }}>
+    <div>
       <header className={navbarScroll ? classes.navBarRootScroll : classes.navBarRoot}>
         <div className={classes.navLeftWrapper}>
           <div className={classes.navBarTitle}>

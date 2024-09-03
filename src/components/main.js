@@ -6,6 +6,10 @@ import Typography from '@material-ui/core/Typography'
 import Button from '@material-ui/core/Button'
 import rocBuildingOne from "../images/yassine-khalfalli-roc-image.jpg"
 import ssMainSign from "../images/ss_sign_1.jpeg"
+import mainDishes from "../images/vable-dishes-bright-colors.jpg"
+import dishesOne from "../images/micheile-henderson-dishes-muted.jpg"
+import dishesGreen from "../images/micheile-henderson-dishes-green-pink.jpg"
+import dishesFour from "../images/brooke-lark-dishes-4.jpg"
 import fiveStar from '../images/fiveStar.png'
 import Divider from '@material-ui/core/Divider'
 import PhoneIcon from '@material-ui/icons/Phone'
@@ -487,7 +491,8 @@ const withStyles = makeStyles(() => ({
         objectFit: "cover",
         aspectRatio: "1/1",
         height: "100vh",
-        marginBottom: "0px"
+        marginBottom: "0px",
+        filter: "blur(2px)"
     },
     mainBanner: {
         display: "flex",
@@ -578,7 +583,7 @@ const Main = () => {
         <div className={classes.mainRoot}>
             {/* <div className={classes.mainBanner}>We are closed Tuesday, August 1st. We will reopen Wednesday, August 2nd</div> */}
 
-            <img src={ssMainSign} className={classes.landingImage} />
+            <img src={dishesFour} className={classes.landingImage} />
 
             <div className={classes.container}>
                 <span className={classes.scrollToSectionOne} id="sectionOne"></span>

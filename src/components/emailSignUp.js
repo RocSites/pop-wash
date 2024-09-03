@@ -1,7 +1,7 @@
 import React, { useRef, useEffect } from "react"
 import CloseIcon from '@mui/icons-material/Close';
 
-const EmailSignUp = ({handleClick}) => {
+const EmailSignUp = ({ handleClick }) => {
     const myRef = useRef();
 
     useEffect(() => {
@@ -23,10 +23,17 @@ const EmailSignUp = ({handleClick}) => {
     }, []);
     return (
         <div class="emailSignUpWrapper">
-            <div ref={myRef}></div>
-            <button class="emailCloseButton" onClick={handleClick}>
-                <CloseIcon />
-            </button>
+            <div class="emailLeftWrapper">
+                <p class="emailTextLarge">Join the wait list and receive 10% off!</p>
+                <p class="emailTextSmall">Get tips on how to save time with household chores, talk with me one on one, get the latest on the Pop Wash launch, and new products!</p>
+            </div>
+            <div class="emailRightWrapper">
+                <div ref={myRef}></div>
+                <button class="emailCloseButton" onClick={handleClick}>
+                    <CloseIcon />
+                </button>
+            </div>
+
         </div>
     )
 }

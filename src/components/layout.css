@@ -598,6 +598,7 @@ pre tt:after {
   width: 100%;
   z-index: 100;
   background-color: #a3b0fd; 
+  max-height: 180px;
 }
 
 .emailSignUpWrapper {
@@ -612,9 +613,36 @@ pre tt:after {
   color: white;
   border: 1px solid white;
   border-radius: 7px;
-  margin-top: 29px;
   margin-left: 16px;
+  margin-top: -10px;
 
+}
+
+.emailLeftWrapper {
+  display: flex;
+  flex-direction: column;
+  width: 50%;
+  padding: 2rem;
+}
+
+.emailRightWrapper {
+  display: flex;
+  justify-content: space-between;
+  width: 50%;
+  padding: 2rem;
+}
+
+.emailTextLarge, .emailTextSmall {
+  color: white;
+}
+
+.emailTextLarge {
+  font-size: 2rem;
+  line-height: normal;
+}
+
+.emailTextSmall {
+  font-size: 0.75rem;
 }
 
 
@@ -629,5 +657,24 @@ pre tt:after {
 
   .emailCloseButton {
     margin: 20px 10px;
+  }
+
+  .emailLeftWrapper {
+    width: 100%;
+    padding: 1rem;
+  }
+
+  .emailSignUpRoot {
+    max-height: unset;
+  }
+
+  .emailRightWrapper {
+    flex-direction: column;
+    width: 100%;
+    padding: 1rem;
+  }
+
+  .emailTextLarge {
+    font-size: 1.5rem;
   }
 }
