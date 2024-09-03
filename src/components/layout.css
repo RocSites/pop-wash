@@ -595,11 +595,9 @@ pre tt:after {
 .emailSignUpRoot {
   bottom: 0;
   position: fixed;
-  height: 250px;
   width: 100%;
   z-index: 100;
   background-color: #a3b0fd; 
-  border: 1px solid red;
 }
 
 .emailSignUpWrapper {
@@ -607,9 +605,29 @@ pre tt:after {
   justify-content: center;
 }
 
+.emailCloseButton {
+  cursor: pointer;
+  height: 30px;
+  background-color: transparent;
+  color: white;
+  border: 1px solid white;
+  border-radius: 7px;
+  margin-top: 29px;
+  margin-left: 16px;
+
+}
+
 
 @media only screen and (max-width: 480px) {
   html {
     font-size: 100%;
+  }
+
+  .emailSignUpWrapper {
+    flex-direction: column;
+  }
+
+  .emailCloseButton {
+    margin: 20px 10px;
   }
 }

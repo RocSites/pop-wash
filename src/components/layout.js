@@ -1,4 +1,4 @@
-import * as React from "react"
+import React, { useState } from "react"
 import PropTypes from "prop-types"
 import { useStaticQuery, graphql } from "gatsby"
 import { makeStyles } from "@material-ui/core/styles"
@@ -73,6 +73,13 @@ const Layout = ({ children }) => {
     }
   `)
 
+  const [showEmailSignUp, setShowEmailSignUp] = useState(true);
+
+  const handleClick = () => {
+    console.log(showEmailSignUp)
+    setShowEmailSignUp(false)
+  }
+
   return (
     <>
       <Header siteTitle={data.site.siteMetadata?.title || `Title`} />
@@ -85,9 +92,12 @@ const Layout = ({ children }) => {
           </div>
         </footer>
       </div>
-      <div class="emailSignUpRoot">
-        <EmailSignUp/>
-      </div>
+      {showEmailSignUp === true ? (
+        <div class="emailSignUpRoot">
+          <EmailSignUp handleClick={handleClick} />
+        </div>
+      ) : null}
+
 
     </>
   )

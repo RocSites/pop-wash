@@ -1,8 +1,9 @@
 import React, { useRef, useEffect } from "react"
+import CloseIcon from '@mui/icons-material/Close';
 
-
-const EmailSignUp = () => {
+const EmailSignUp = ({handleClick}) => {
     const myRef = useRef();
+
     useEffect(() => {
         const script = document.createElement('script');
         script.src =
@@ -23,6 +24,9 @@ const EmailSignUp = () => {
     return (
         <div class="emailSignUpWrapper">
             <div ref={myRef}></div>
+            <button class="emailCloseButton" onClick={handleClick}>
+                <CloseIcon />
+            </button>
         </div>
     )
 }
