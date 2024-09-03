@@ -1,13 +1,12 @@
-import React, { useState } from 'react'
+import React, { useState, useEffect } from 'react'
 import PropTypes from "prop-types"
 import { Link } from "gatsby"
 import { makeStyles } from '@material-ui/core'
 import scrollTo from 'gatsby-plugin-smoothscroll'
 import Button from '@material-ui/core/Button'
-import chillGrillLogoOG from '../images/chill_logo_og.jpeg'
 import RocSitesLogo from "../images/logo/logo.png"
 import SSLogo from "../images/ss_logo_placeholder.webp"
-import coneIcon from "../images/cone_icon.png"
+import PopWashLogo from "../images/pop_wash_logo-1.png"
 import Drawer from '@material-ui/core/Drawer';
 import List from '@material-ui/core/List';
 import ListItem from '@material-ui/core/ListItem';
@@ -39,7 +38,7 @@ const withStyles = makeStyles(() => ({
     color: "#2A5095",
     backgroundColor: "white",
     justifyContent: "space-between",
-    top: 0,
+    top: 44,
     left: 0,
     right: 0,
     margin: "0px auto",
@@ -51,14 +50,26 @@ const withStyles = makeStyles(() => ({
       // background: "#4c86d1",
       justifyContent: "space-between",
       width: "100%",
-      top: 0,
+      top: 44,
       boxShadow: "1px 0 10px 0 rgb(89 98 115 / 20%)",
       zIndex: 2,
     },
     "@media(max-width: 600px)": {
-      height: "110px",
+      // height: "110px",
 
     }
+  },
+  navBarRootScroll: {
+    position: "fixed",
+    display: "flex",
+    // background: "#4c86d1",
+    backgroundColor: "white",
+    color: "white",
+    justifyContent: "space-between",
+    width: "100%",
+    top: 0,
+    boxShadow: "1px 0 10px 0 rgb(89 98 115 / 20%)",
+    zIndex: 2,
   },
   navBarTitle: {
     maxWidth: 960,
@@ -88,7 +99,7 @@ const withStyles = makeStyles(() => ({
   },
   navLogo: {
     display: "flex",
-    width: "160px",
+    width: "130px",
     margin: "auto",
     borderRadius: "16px"
   },
@@ -158,7 +169,7 @@ const withStyles = makeStyles(() => ({
   bottomHeaderRoot: {
     backgroundColor: "#2A5095",
     position: "relative",
-    top: 120,
+    top: 0,
     height: "50px",
     margin: "auto",
     "@media(max-width: 1200px)": {
@@ -168,7 +179,6 @@ const withStyles = makeStyles(() => ({
     },
     "@media(max-width: 600px)": {
       height: "auto",
-      top: 110,
     },
   },
   mapLink: {
@@ -183,6 +193,7 @@ const Header = ({ siteTitle }) => {
   const [openDrawer, setOpenDrawer] = useState(false);
   const [dropdown, setDropdown] = useState(false);
   const [open, setOpen] = useState(false)
+  const [navbarScroll, setNavbarScroll] = useState(false)
 
   const handleClickMobile = () => {
     setOpen(!open)
@@ -224,15 +235,28 @@ const Header = ({ siteTitle }) => {
     setOpenDrawer(drawerOpen => !drawerOpen)
   }
 
+  //navbar scroll changeBackground function
+  const changeBackground = () => {
+    if (window.scrollY >= 33) {
+      setNavbarScroll(true)
+    } else {
+      setNavbarScroll(false)
+    }
+  }
+
+  useEffect(() => {
+    changeBackground()
+    // adding the event when scroll change background
+    window.addEventListener("scroll", changeBackground)
+  })
+
   return (
     <div style={{ marginBottom: "-50px" }}>
-      <header
-        className={classes.navBarRoot}
-      >
+      <header className={navbarScroll ? classes.navBarRootScroll : classes.navBarRoot}>
         <div className={classes.navLeftWrapper}>
           <div className={classes.navBarTitle}>
             <Link to="/" style={{ color: '#001841', textDecoration: `none` }}>
-              <img className={classes.navLogo} src={SSLogo} alt="company logo" />
+              <img className={classes.navLogo} src={PopWashLogo} alt="company logo" />
             </Link>
           </div>
         </div>
@@ -310,14 +334,14 @@ const Header = ({ siteTitle }) => {
                 <div className="productButtonWrapperMobile">
                   <ListItemButton style={{ paddingLeft: "8px", paddingBottom: "0px", justifyContent: "flex-start" }} onClick={handleClickMobile}>
                     <Typography style={{ fontFamily: "georgia, sans-serif", color: "#2A5095" }}>Services</Typography>
-                    {open ? <ExpandLess sx={{fill: "#2A5095"}} /> : <ExpandMore sx={{fill: "#2A5095"}} />}
+                    {open ? <ExpandLess sx={{ fill: "#2A5095" }} /> : <ExpandMore sx={{ fill: "#2A5095" }} />}
                   </ListItemButton>
                   <Collapse in={open} timeout="auto" unmountOnExit>
                     <List component="div" disablePadding>
                       <List>
                         {serviceMenuItems[0].submenu.map((submenu, index) => (
                           <ListItemText key={index} className="menu-items">
-                            <a style={{ fontSize: "0.9rem",fontFamily: "georgia, sans-serif", paddingLeft: "32px", color: "#2A5095" }} href={submenu.url}>{submenu.title}</a>
+                            <a style={{ fontSize: "0.9rem", fontFamily: "georgia, sans-serif", paddingLeft: "32px", color: "#2A5095" }} href={submenu.url}>{submenu.title}</a>
                           </ListItemText>
                         ))}
                       </List>
@@ -371,11 +395,11 @@ const Header = ({ siteTitle }) => {
           <Button
             className="bottomHeaderPhone"
             target="_blank" href="tel:(585) 872-2170"
-          > (585) 872-2170
+          > placeholder text
           </Button>
           <AnchorLink className={classes.mapLink}
             to="/#sectionThree">
-            <p className="bottomHeaderText">1170 Ridge Road Webster,NY 14580</p>
+            <p className="bottomHeaderText">some more placeholder text</p>
 
           </AnchorLink>
         </div>
