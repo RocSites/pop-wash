@@ -590,6 +590,24 @@ pre tt:before,
 pre tt:after {
   content: "";
 }
+
+
+.emailSignUpRoot {
+  bottom: 0;
+  position: fixed;
+  height: 250px;
+  width: 100%;
+  z-index: 100;
+  background-color: #a3b0fd; 
+  border: 1px solid red;
+}
+
+.emailSignUpWrapper {
+  display: flex;
+  justify-content: center;
+}
+
+
 @media only screen and (max-width: 480px) {
   html {
     font-size: 100%;

@@ -3,6 +3,7 @@ import PropTypes from "prop-types"
 import { useStaticQuery, graphql } from "gatsby"
 import { makeStyles } from "@material-ui/core/styles"
 import Header from "./header"
+import EmailSignUp from "./emailSignUp"
 import Typography from '@material-ui/core/Typography'
 import "./layout.css"
 
@@ -84,6 +85,10 @@ const Layout = ({ children }) => {
           </div>
         </footer>
       </div>
+      <div class="emailSignUpRoot">
+        <EmailSignUp/>
+      </div>
+
     </>
   )
 }
