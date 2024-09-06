@@ -1,6 +1,6 @@
 module.exports = {
   siteMetadata: {
-    title: `Superior Solutions`,
+    title: `Pop Wash`,
     description: `independent family owned and operated pack and ship establishment in Webster, New York.`,
     author: `Doug Kellermeyer`,
   },

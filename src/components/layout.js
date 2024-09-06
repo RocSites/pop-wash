@@ -87,7 +87,7 @@ const Layout = ({ children }) => {
         <main className={classes.mainContent}>{children}</main>
         <footer class="footerRoot">
           <div className={classes.footerContent}>
-            <p className={classes.copyrightText}> © {new Date().getFullYear()} Superior Solutions</p>
+            <p className={classes.copyrightText}> © {new Date().getFullYear()} Pop Wash</p>
             <p class="rocsitesText">Website by <span><a href="https://www.rocsites.com/" target="_blank">RocSites</a></span></p>
           </div>
         </footer>
