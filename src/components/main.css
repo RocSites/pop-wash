@@ -214,12 +214,22 @@ body {
     padding: 5%;
 }
 
+.sectionOneHeader {
+    font-size: 3rem;
+    text-align: center;
+}
+
+.sectionOneSubText {
+    text-align: center;
+    font-weight: normal;
+}
+
 .servicesLink {
     text-decoration: none;
 }
 
 .packingShippingImageLogo {
-    width: 150px;
+    max-width: 500px;
     margin: 15px;
 }
 
@@ -361,6 +371,11 @@ body {
     height: 35px;
 }
 
+.aboutImageTextWrapper {
+    display: flex;
+    justify-content: space-around;
+}
+
 .menu-items a {
     display: flex;
     align-items: center;
@@ -381,6 +396,16 @@ body {
 .packingShippingWrapper {
     display: flex;
     justify-content: center;
+    flex-wrap: wrap;
+    flex-direction: row;
+}
+
+.popWashDetailWrapper {
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    align-items: center;
+    margin: auto;
 }
 
 .giftDetailWrapper {
@@ -410,8 +435,23 @@ body {
     color: #2A5095;
 }
 
+.textCenter {
+    text-align: center;
+}
+
 .navCallButton>span {
     margin: auto;
+}
+
+#headshot {
+    max-height: 178px;
+    max-width: 160px;
+}
+
+.aboutTextWrapper {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
 }
 
 
@@ -573,6 +613,23 @@ body {
 }
 
 @media(max-width:600px) {
+
+    #headshot {
+        margin: auto;
+    }
+
+    .aboutImageTextWrapper {
+        flex-direction: column;
+    }
+
+    .sectionOneHeader {
+        font-size: 2rem;
+    }
+
+    .packingShippingImageLogo {
+        width: 90%;
+        max-width: 100%;
+    }
 
     .imageWrapper {
         width: 100%;

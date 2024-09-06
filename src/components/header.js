@@ -28,7 +28,7 @@ import "./main.css"
 const withStyles = makeStyles(() => ({
   "@global": {
     "*": {
-      fontFamily: "Arial !important",
+      fontFamily: "Poppins, sans-serif !important",
       fontWeight: "100"
     }
   },
@@ -203,28 +203,16 @@ const Header = ({ siteTitle }) => {
 
   const serviceMenuItems = [
     {
-      title: 'Services',
+      title: 'Products',
       url: '',
       submenu: [
         {
-          title: 'Packing & Shipping',
+          title: 'Pop Wash',
           url: '/packing-shipping',
         },
         {
-          title: 'Passport Photos',
+          title: 'Product 1',
           url: '/passports',
-        },
-        {
-          title: 'Mail Receiving',
-          url: '/mail-receiving',
-        },
-        {
-          title: 'Mailing Services',
-          url: '/mail-services',
-        },
-        {
-          title: 'Packing & Office Supplies',
-          url: '/supplies',
         }
       ]
     },
@@ -273,7 +261,7 @@ const Header = ({ siteTitle }) => {
                   border: "transparent"
                 }}
               >
-                Services
+                Products
                 <KeyboardArrowDownIcon />
               </button>
               {dropdown ?
@@ -287,7 +275,7 @@ const Header = ({ siteTitle }) => {
                 : null}
             </div>
             <AnchorLink className={classes.navButton}
-              to="/#sectionTwo" title="Gifts">
+              to="/#sectionTwo" title="Pop Wash Silverware">
             </AnchorLink>
             <AnchorLink className={classes.navButton}
               to="/#about" title="About">
@@ -298,7 +286,7 @@ const Header = ({ siteTitle }) => {
 
           </div>
 
-          <div class="socialLinkWrapperNav">
+          {/* <div class="socialLinkWrapperNav">
             <Button
               className={classes.navCallButton}
               target="_blank" href="tel:585-872-2170"
@@ -306,18 +294,18 @@ const Header = ({ siteTitle }) => {
               <PhoneIcon sx={{ fill: "#2A5095 !important" }} class="drawerPhoneIcon" />
               Call Us
             </Button>
-          </div>
+          </div> */}
         </div>
 
 
         <div className={classes.navBarHamburgerDrawerWrapper}>
-          <Button
+          {/* <Button
             className={classes.navCallButtonMobile}
             target="_blank" href="tel:585-872-2170"
           >
             <PhoneIcon sx={{ fill: "#2A5095 !important" }} class="drawerPhoneIcon" />
             Call Us
-          </Button>
+          </Button> */}
           <MenuIcon
             className={classes.hamburgerIcon}
             onClick={toggleDrawer}
@@ -335,7 +323,7 @@ const Header = ({ siteTitle }) => {
               <div className={classes.drawerLinkWrapper}>
                 <div className="productButtonWrapperMobile">
                   <ListItemButton style={{ paddingLeft: "8px", paddingBottom: "0px", justifyContent: "flex-start" }} onClick={handleClickMobile}>
-                    <Typography style={{ fontFamily: "georgia, sans-serif", color: "#2A5095" }}>Services</Typography>
+                    <Typography style={{ fontFamily: "georgia, sans-serif", color: "#2A5095" }}>Products</Typography>
                     {open ? <ExpandLess sx={{ fill: "#2A5095" }} /> : <ExpandMore sx={{ fill: "#2A5095" }} />}
                   </ListItemButton>
                   <Collapse in={open} timeout="auto" unmountOnExit>
@@ -377,7 +365,7 @@ const Header = ({ siteTitle }) => {
               </div>
 
 
-              <div class="socialLinkWrapperNavMobile">
+              {/* <div class="socialLinkWrapperNavMobile">
                 <Button
                   class="drawerItemLogin"
                   target="_blank" href="tel:585-872-2170"
@@ -385,7 +373,7 @@ const Header = ({ siteTitle }) => {
                   <PhoneIcon sx={{ fill: "white !important" }} class="drawerPhoneIcon" />
                   Call Us
                 </Button>
-              </div>
+              </div> */}
 
             </div>
           </Drawer>

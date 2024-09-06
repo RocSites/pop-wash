@@ -3,18 +3,17 @@ import { Link } from "gatsby"
 import Layout from "../components/layout"
 import SEO from "../components/seo"
 import "../components/main.css"
-import PassportBackground from "../images/kelly-sikkema-passport.jpg"
+import dishesOne from "../images/micheile-henderson-dishes-green-pink.jpg"
 
 const PassPortPage = () => (
   <Layout>
     <SEO title="Passport Photos" />
-    <h1 class="menuHeader">Passport & ID Photos</h1>
-    <img class="passportPhoto" src={PassportBackground} />
+    <h1 class="menuHeader">Product 1</h1>
+    <img class="passportPhoto" src={dishesOne} />
     <div class="pageDetailsTextWrapper">
-      <p class="pageDetailText">Color photos are available in just minutes for a passport, visa, immigration/naturalization, employment ID, pistol/gun permits, attorney IDs ,etc.
+      <p class="pageDetailText">Product Description
       </p>
 
-      <p class="pageDetailText">No appointment necessary.</p>
     </div>
   </Layout>
 )

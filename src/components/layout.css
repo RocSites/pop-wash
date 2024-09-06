@@ -10,7 +10,7 @@ body {
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   color: hsla(0, 0%, 0%, 0.8);
-  font-family: georgia, serif;
+  font-family: "Poppins", sans-serif !important;
   font-weight: normal;
   word-wrap: break-word;
   font-kerning: normal;
@@ -627,7 +627,7 @@ pre tt:after {
 
 .emailRightWrapper {
   display: flex;
-  justify-content: space-between;
+  justify-content: space-around;
   width: 50%;
   padding: 2rem;
 }
@@ -646,7 +646,7 @@ pre tt:after {
 }
 
 
-@media only screen and (max-width: 480px) {
+@media only screen and (max-width: 600px) {
   html {
     font-size: 100%;
   }

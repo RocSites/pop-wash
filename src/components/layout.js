@@ -10,7 +10,7 @@ import "./layout.css"
 const withStyles = makeStyles(() => ({
   "@global": {
     p: {
-      fontFamily: "Arial !important",
+      fontFamily: "Poppins, sans-serif !important",
     }
   },
   layoutRoot: {

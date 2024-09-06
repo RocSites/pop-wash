@@ -4,28 +4,20 @@ import { makeStyles, ThemeProvider } from '@material-ui/core/styles'
 import { Link } from "gatsby"
 import Typography from '@material-ui/core/Typography'
 import Button from '@material-ui/core/Button'
-import rocBuildingOne from "../images/yassine-khalfalli-roc-image.jpg"
-import ssMainSign from "../images/ss_sign_1.jpeg"
 import mainDishes from "../images/vable-dishes-bright-colors.jpg"
-import dishesOne from "../images/micheile-henderson-dishes-muted.jpg"
 import dishesGreen from "../images/micheile-henderson-dishes-green-pink.jpg"
 import dishesFour from "../images/brooke-lark-dishes-4.jpg"
-import fiveStar from '../images/fiveStar.png'
-import Divider from '@material-ui/core/Divider'
+
 import PhoneIcon from '@material-ui/icons/Phone'
 import StarRateIcon from '@material-ui/icons/StarRate';
 import FacebookIcon from "../images/facebook_icon4.svg"
 import InstagramIcon from "../images/instagram_icon4.svg"
 import GoogleIcon from "../images/google_icon.png"
-import MailBoxes from "../images/ss_mailboxes_1.jpeg"
-import PassPort from "../images/jon-tyson-passport.jpg"
-import MailServices from "../images/sue-hughes-mail.jpg"
-import SuppliesImage from "../images/ss_supplies_2.jpeg"
-import Boxes from "../images/ss_boxes_2.jpeg"
-import GiftBeanieOne from "../images/ss_beanie.jpeg"
-import GiftBeanieTwo from "../images/ss_beanie_3.jpeg"
-import PuzzlesPhoto from "../images/ss_puzzles.jpeg"
-import GiftBeanieThree from "../images/ss_beanie_2.jpeg"
+import headShot from "../images/michele_headshot.png"
+import dishesOne from "../images/brooke-lark-dishes-4.jpg"
+import dishesTwo from "../images/vable-dishes-bright-colors.jpg"
+import dishesThree from "../images/micheile-henderson-dishes-green-pink.jpg"
+import dishesFive from "../images/micheile-henderson-dishes-muted.jpg"
 import "./main.css"
 
 const withStyles = makeStyles(() => ({
@@ -142,7 +134,7 @@ const withStyles = makeStyles(() => ({
         marginRight: "0px",
         fontSize: "2em",
         fontWeight: "500",
-        fontFamily: "Arial !important",
+        fontFamily: "Poppins, sans-serif !important",
         textAlign: "center",
         margin: "auto",
         "@media(max-width: 600px)": {
@@ -159,7 +151,7 @@ const withStyles = makeStyles(() => ({
             marginRight: "0px",
             fontSize: "2em",
             fontWeight: "100",
-            fontFamily: "Arial !important",
+            fontFamily: "Poppins, sans-serif !important",
             textAlign: "center",
             margin: "auto"
         }
@@ -248,7 +240,7 @@ const withStyles = makeStyles(() => ({
     contactPhone: {
         color: "black",
         textDecoration: "none",
-        fontFamily: "Arial !important",
+        fontFamily: "Poppins, sans-serif !important",
     },
     contactButton: {
         margin: "20px",
@@ -349,7 +341,7 @@ const withStyles = makeStyles(() => ({
         backgroundColor: "#1f5a76",
         margin: "auto",
         marginRight: "10px",
-        fontFamily: "Arial !important",
+        fontFamily: "Poppins, sans-serif !important",
         borderRadius: "14px"
     },
     bbbCirleText: {
@@ -492,7 +484,7 @@ const withStyles = makeStyles(() => ({
         aspectRatio: "1/1",
         height: "100vh",
         marginBottom: "0px",
-        filter: "blur(2px)"
+        // filter: "blur(1px)"
     },
     mainBanner: {
         display: "flex",
@@ -590,59 +582,28 @@ const Main = () => {
             </div>
 
             <section class="servicesSectionWrapper">
-                <Typography className={classes.someOfWorkHeader}>Our Services</Typography>
-                <div className={classes.servicesWrapper}>
-
-                    <Link to="/packing-shipping" className={classes.servicesItem}>
-                        <Typography className={classes.servicesTitle}>Packing & Shipping</Typography>
-                        <Typography className={classes.servicesSubtitle}>Fedex, UPS, DHL, USPS</Typography>
-
-                        <img className={classes.servicesImage} src={Boxes} />
-                    </Link>
-
-                    <Link to="/passports" className={classes.servicesItem}>
-                        <Typography className={classes.servicesTitle}>Passport Photos</Typography>
-                        <Typography className={classes.servicesSubtitle}>Instant Passport Photos</Typography>
-                        <img className={classes.servicesImage} src={PassPort} />
-                    </Link>
-                    <Link to="/mail-receiving" className={classes.servicesItem}>
-                        <Typography className={classes.servicesTitle}>Mail Receiving</Typography>
-                        <Typography className={classes.servicesSubtitle}>Mailboxes and Faxing</Typography>
-                        <img className={classes.servicesImage} src={MailBoxes} />
-                    </Link>
-                    <Link to="/mail-services" className={classes.servicesItem}>
-                        <Typography className={classes.servicesTitle}>Mailing Services</Typography>
-                        <Typography className={classes.servicesSubtitle}>Full Service, Postal Presorting, Postage Discounts</Typography>
-                        <img className={classes.servicesImage} src={MailServices} />
-                    </Link>
-                    <Link to="/supplies" className={classes.servicesItem}>
-                        <Typography className={classes.servicesTitle}>Packing & Office Supplies</Typography>
-                        <Typography className={classes.servicesSubtitle}>Boxes, Bubble Wrap, Packing Peanuts, Office Supplies</Typography>
-                        <img className={classes.servicesImage} src={SuppliesImage} />
-                    </Link>
-
-                </div>
+                <h1 class="sectionOneHeader">product slogan/catchphrase</h1>
+                <h3 class="sectionOneSubText">Some smaller text that describes the product</h3>
 
             </section>
 
             <span className={classes.scrollToLocation} id="sectionTwo"></span>
 
             <section class="servicesSectionWrapper">
-                <Typography className={classes.aboutTitleHeader}>Gifts</Typography>
-                <p class="giftDetailText">Explore our store's delightful Beanie Babies, stuffed animals, and puzzles! Find cuddly companions,
-                    soft plush toys, and brain-teasing puzzles for all ages. Let your imagination soar with us today!</p>
+                <Typography className={classes.aboutTitleHeader}>Pop Wash Silverware</Typography>
+                <p class="giftDetailText textCenter">Pop Wash Product Description</p>
                 <div class="giftDetailWrapper">
                     <div class="giftImageWrapper">
-                        <img class="giftImage" src={GiftBeanieOne} />
+                        <img class="giftImage" src={dishesOne} />
                     </div>
                     <div class="giftImageWrapper">
-                        <img class="giftImage" src={GiftBeanieTwo} />
+                        <img class="giftImage" src={dishesTwo} />
                     </div>
                     <div class="giftImageWrapper">
-                        <img class="giftImage" src={PuzzlesPhoto} />
+                        <img class="giftImage" src={dishesThree} />
                     </div>
                     <div class="giftImageWrapper">
-                        <img class="giftImage" src={GiftBeanieThree} />
+                        <img class="giftImage" src={dishesFive} />
                     </div>
                 </div>
             </section>
@@ -652,13 +613,24 @@ const Main = () => {
 
             <section class="servicesSectionWrapper">
                 <Typography className={classes.aboutTitleHeader}>About Us</Typography>
-                <p class="giftDetailText">Superior Solutions is an independent family owned and operated pack and ship establishment in Webster, New York. </p>
-                <p class="giftDetailText">With over 24 years of experience in the packaging and shipping industry, the owner, Cynthia Wachter opened Superior Solutions to provide customers with superior packing and shipping services in a personal and professional manner.</p>
-                <p class="giftDetailText">Although a Federal Express Authorized Ship Agent, unlike the name brand stores, Superior Solutions utilizes all major shippers including FedEx, UPS, DHL, and USPS to provide customers with multiple options and the best possible pricing to meet their needs.</p>
-                <div class="bbbWrapper">
-                <a target="_blank" title="Superior Solutions BBB Business Review" href="http://www.bbb.org/upstate-new-york/business-reviews/mailing-services/superior-solutions-in-webster-ny-172807213/#bbbonlineclick">
-                    <img style={{margin: "auto"}} src="http://seal-upstateny.bbb.org/seals/blue-seal-200-130-superior-solutions-172807213.png" alt="Superior Solutions BBB Business Review"/></a>
+                <div class="aboutImageTextWrapper">
+                    <div style={{marginLeft: "auto", marginRight: "auto"}}>
+                        <img src={headShot} id="headshot" />
+                        <p>Michele Prior, CEO</p>
+                    </div>
+
+                    <div class="aboutTextWrapper">
+                        <p class="giftDetailText">As a busy working mom and Oncology nurse, I often dreaded emptying the dishwasher and most of all the silverware.  I knew there had to be an easier and quicker way to accomplish this household task!. </p>
+                        <p class="giftDetailText">I searched the market and saw nothing out there that could help me. As a busy person, I just knew that others were experiencing the same feeling I had when emptying the dishwasher and I was <b>determined</b> to come up with a solution to this problem.</p>
+                        <p class="giftDetailText">After I had the idea of Pop wash, I started doing research on measurements and created my drawings. Then I bought cardboard, an X-ACTo knife and went to town creating my first prototype in my living room.  This is where Pop Wash Silverware was born in Niagara Falls NY!</p>
+                        <p class="giftDetailText">I believe in dreams and dreams can come true with God first and knowing that he will bring all the right people in your life if it is his plan!</p>
+                        <p class="giftDetailText">I hope to bring this product to the market and help people save time with household chores. I’m excited to bring this product and other products to the market for you all!</p>
+                    </div>
+
+
                 </div>
+
+
             </section>
 
 
@@ -670,61 +642,23 @@ const Main = () => {
                         <div className={classes.aboutSectionWrapper}>
                             <Typography className={classes.aboutTitleHeader}>Contact Us</Typography>
                             <div className={classes.phoneEmailWrapper}>
-                                <a href="tel:585-872-2170" className={classes.contactPhone}>
+                                <a href="tel:716-541-8034" className={classes.contactPhone}>
                                     <Button className={classes.contactButton}>
                                         <PhoneIcon className={classes.phoneIcon} />
-                                        (585) 872-2170
+                                        (716) 541-8034
                                     </Button>
                                 </a>
-                                <a className="bottomHeaderEmail" href='mailto: supsol@aol.com'>Email Us</a>
+                                <a className="bottomHeaderEmail" href='mailto: micheleprior00@gmail.com'>Email Us</a>
 
                             </div>
-                            <div>
-                                <p style={{ textAlign: "center", marginTop: "20px" }}>1170 Ridge Road Webster,NY 14580</p>
-                                <div class="mapWrapper">
-                                    <iframe src="https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d11631.718688287952!2d-77.4425525!3d43.2109644!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x89d6cee19cf0c91b%3A0x9281849d23c57d2c!2sSuperior%20Solutions!5e0!3m2!1sen!2sus!4v1709057938288!5m2!1sen!2sus" width="600" height="450" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
-                                </div>
-                            </div>
-                            <div class="hoursWrapper">
-                                <p>Hours</p>
-                                <div class="hoursDayTime">
-                                    <p>Monday - Friday</p>
-                                    <p class="hoursTime">9:00 AM - 5:30 PM</p>
-                                </div>
-                                <div class="hoursDayTime">
-                                    <p>Saturday</p>
-                                    <p class="hoursTime">10:00 AM - 2:00 PM</p>
-                                </div>
-                            </div>
+                 
                         </div>
                     </div>
                 </div>
             </section>
 
             <span className={classes.scrollToContact} id="contactForm"></span>
-            <section class="py-5 section-bubble4">
-                <div className={classes.container}>
-                    <div>
-
-                        <div className={classes.reviewsWrapper}>
-                            <a className={classes.reviewLink}
-                                href=""
-                                target="_blank"
-                            >
-                                <Button
-                                    className={classes.reviewButton}
-                                >
-                                    <div className={classes.reviewStarWrapper}>
-                                        <Typography className={classes.reviewHeader}>Leave us a review!</Typography>
-                                        <img className={classes.socialFooterMargin} src={GoogleIcon} />
-                                        <FiveStar />
-                                    </div>
-                                </Button>
-                            </a>
-                        </div>
-                    </div>
-                </div>
-            </section>
+  
 
         </div>
     )
